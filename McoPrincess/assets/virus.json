@@ -1,0 +1,90 @@
+{
+  "frames": [
+    {
+      "filename": "Virus1",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 84
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 97,
+        "w": 103,
+        "h": 84
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Virus2",
+      "frame": {
+        "x": 103,
+        "y": 0,
+        "w": 100,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 21,
+        "y": 98,
+        "w": 100,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Virus3",
+      "frame": {
+        "x": 203,
+        "y": 0,
+        "w": 100,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 99,
+        "w": 100,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.6",
+    "image": "virus.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 303,
+      "h": 84
+    },
+    "scale": 1
+  }
+}

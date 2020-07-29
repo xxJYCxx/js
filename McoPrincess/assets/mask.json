@@ -1,0 +1,90 @@
+{
+  "frames": [
+    {
+      "filename": "Mask1",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 118,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 139,
+        "w": 118,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Mask2",
+      "frame": {
+        "x": 118,
+        "y": 0,
+        "w": 118,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 139,
+        "w": 118,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Mask3",
+      "frame": {
+        "x": 236,
+        "y": 0,
+        "w": 118,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 139,
+        "w": 118,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.6",
+    "image": "mask.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 354,
+      "h": 46
+    },
+    "scale": 1
+  }
+}

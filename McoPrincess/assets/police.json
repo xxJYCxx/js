@@ -1,0 +1,140 @@
+{
+  "frames": [
+    {
+      "filename": "Police4",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 205
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 43,
+        "w": 123,
+        "h": 205
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 268
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Police3",
+      "frame": {
+        "x": 0,
+        "y": 205,
+        "w": 123,
+        "h": 202
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 44,
+        "w": 123,
+        "h": 202
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 268
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Police1",
+      "frame": {
+        "x": 0,
+        "y": 407,
+        "w": 123,
+        "h": 201
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 45,
+        "w": 123,
+        "h": 201
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 268
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Police5",
+      "frame": {
+        "x": 0,
+        "y": 608,
+        "w": 123,
+        "h": 201
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 43,
+        "w": 123,
+        "h": 201
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 267
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "Police2",
+      "frame": {
+        "x": 0,
+        "y": 809,
+        "w": 123,
+        "h": 199
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 46,
+        "w": 123,
+        "h": 199
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 268
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.6",
+    "image": "police.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 123,
+      "h": 1008
+    },
+    "scale": 1
+  }
+}
