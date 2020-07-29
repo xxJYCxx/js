@@ -11,7 +11,7 @@ let config = {
             gravity: {
                 y: false
             },
-            debug: true
+            debug: false
         }
     },
     scene: [IntroScene, StoryScene1, StoryScene2, Instruction1, Instruction2,Level1, Level2, Level3, levelPass ,endScene]

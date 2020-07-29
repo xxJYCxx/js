@@ -3,6 +3,7 @@ class Level1 extends Phaser.Scene {
     constructor ()
     {
         super({ key: 'Level1' });
+        this.lifeCount=3
     }
 
  preload () {
@@ -15,8 +16,8 @@ class Level1 extends Phaser.Scene {
     this.load.atlas('mask', 'assets/mask.png', 'assets/mask.json');
     this.load.image('life','assets/Mask1.png');
     this.load.audio('bgm','assets/bgm.mp3');
-    // this.load.audio('bing','assets/bing.mp3');
-    // this.load.audio('boom','assets/boom.mp3');
+    this.load.audio('bing','assets/bing.mp3');
+    this.load.audio('boom','assets/boom.mp3');
 } 
 
  create () {
@@ -35,9 +36,10 @@ class Level1 extends Phaser.Scene {
     this.wallLayer.setCollisionByProperty({ wood:true });
 
     //music
-    // this.bingSnd = this.sound.add('bing');
-    // this.boomSnd = this.sound.add('boom');
+    this.bingSnd = this.sound.add('bing');
+    this.boomSnd = this.sound.add('boom');
     this.bgmSnd = this.sound.add('bgm');
+    this.bgmSnd.play();
     this.bgmSnd.loop = true;
 
     var start = map.findObject("ObjectLayer1", obj => obj.name === "start");
@@ -67,13 +69,10 @@ class Level1 extends Phaser.Scene {
 
     this.physics.add.collider(this.player,this.groundLayer);
     this.physics.add.collider(this.player,this.wallLayer);
-    this.physics.add.overlap(this.player, this.virus1, this.hitVirus, null, this );
-    this.physics.add.overlap(this.player, this.mask1, this.collectMask, null, this );
 
     this.life1 = this.add.image(50,30, 'life').setScrollFactor(0).setScale(0.6);
     this.life2 = this.add.image(150,30,'life').setScrollFactor(0).setScale(0.6);
     this.life3 = this.add.image(250,30,'life').setScrollFactor(0).setScale(0.6);
-
 
     this.add.text(50,450, 'Level 1', { font: '24px Helvetica', fill: 'white' }).setScrollFactor(0);
 
@@ -141,16 +140,21 @@ class Level1 extends Phaser.Scene {
             });    
 
         //virus
-        this.virus = this.physics.add.sprite(466, 1553,'virus').setScale(0.2).play('virusanim');
+        this.virus1 = this.physics.add.sprite(466, 1553,'virus').setScale(0.2).play('virusanim');
         this.virus2 = this.physics.add.sprite(650, 430,'virus').setScale(0.2).play('virusanim');
-        this.virus.body.setSize(this.virus.width, this.virus.height/2);
+        this.virus1.body.setSize(this.virus1.width, this.virus1.height/2);
         this.virus2.body.setSize(this.virus2.width, this.virus2.height/2);
 
         //mask
-        this.mask = this.physics.add.sprite(782, 688,'mask').setScale(0.3).play('maskanim');
+        this.mask1 = this.physics.add.sprite(782, 688,'mask').setScale(0.3).play('maskanim');
         this.mask2 = this.physics.add.sprite(116, 810,'mask').setScale(0.3).play('maskanim');
-        this.mask.body.setSize(this.mask.width, this.mask.height/2);
+        this.mask1.body.setSize(this.mask1.width, this.mask1.height/2);
         this.mask2.body.setSize(this.mask2.width, this.mask2.height/2);
+
+        this.physics.add.overlap(this.player, this.virus1, this.hitVirus, null, this );
+        this.physics.add.overlap(this.player, this.virus2, this.hitVirus, null, this );
+        this.physics.add.overlap(this.player, this.mask1, this.collectMask, null, this );
+        this.physics.add.overlap(this.player, this.mask2, this.collectMask, null, this );
 
 
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -163,37 +167,6 @@ class Level1 extends Phaser.Scene {
     
         // set background color, so the sky is not black
         this.cameras.main.setBackgroundColor('#ccccff');
-
-            //hit virus
-        // this.hitVirus (player, virus) {
-        //     virus.disableBody(true, true);
-        //     // this.boomSnd.play();
-        //     console.log(this.virusCount);
-        //     this.virusCount -= 1; 
-        //     if ( this.virusCount === 2) {
-        //         this.cameras.main.shake(50);
-        //         this.life1.setVisible(false);
-        //     } else if ( this.virusCount === 1) {
-        //         this.cameras.main.shake(50);
-        //         this.life2.setVisible(false);
-        //     } else if ( this.virusCount === 0) {
-        //         this.cameras.main.shake(50);
-        //         this.life3.setVisible(false);
-        //     }
-        //     if ( this.virusCount === 0 ) {
-        //         this.cameras.main.shake(400);
-        //         // delay 1 sec
-        //         this.time.delayedCall(1000,function() {
-        //             this.virusCount = 3;
-        //             // this.bgmSnd.stop();
-        //             this.scene.restart();
-        //         },[], this);
-        //     }
-        //     this.cameras.main.shake(50);
-            
-        //     //this.lifeText.setText('' + this.lifeCount); // set the text to show the current score
-        //     return false;
-        // }
  }  
     
      update() {
@@ -235,15 +208,10 @@ class Level1 extends Phaser.Scene {
         console.log('Reached End, game over');
         //this.cameras.main.shake(500);
         this.time.delayedCall(1000,function() {
-            
+            this.bgmSnd.loop = false;
+            this.bgmSnd.stop()
             this.scene.start("levelPass");
         },[], this);
-    }
-
-    if ( this.player.x >= 200 ) {
-        console.log('Reached startPoint, bgm play ');
-        this.bgmSnd.play(
-        );
     }
 
         }//end of update
@@ -251,7 +219,7 @@ class Level1 extends Phaser.Scene {
      moveRightLeft() {
         console.log('moveDownUp')
         this.tweens.timeline({
-            targets: this.virus,
+            targets: this.virus1,
             loop: -1, // loop forever
             ease: 'Linear',
             duration: 3000,
@@ -281,5 +249,53 @@ class Level1 extends Phaser.Scene {
             },
         ]
         });
+    }
+
+      //hit virus
+      hitVirus (player, virus) {
+        virus.disableBody(true, true);
+        this.boomSnd.play();
+        console.log(this.lifeCount);
+        this.lifeCount -= 1; 
+        if ( this.lifeCount === 2) {
+            this.cameras.main.shake(50);
+            this.life3.setVisible(false);
+        } else if ( this.lifeCount === 1) {
+            this.cameras.main.shake(50);
+            this.life2.setVisible(false);
+        } else if ( this.lifeCount === 0) {
+            this.cameras.main.shake(50);
+            this.life1.setVisible(false);
+        }
+        if ( this.lifeCount === 0 ) {
+            this.cameras.main.shake(400);
+            // delay 1 sec
+            this.time.delayedCall(1000,function() {
+                this.lifeCount = 3;
+                this.bgmSnd.stop();
+                this.scene.restart();
+            },[], this);
+        }
+        this.cameras.main.shake(50);
+        return false;
+    }
+
+    //collectMask
+    collectMask(player, mask) {
+        mask.disableBody(true, true);
+        this.bingSnd.play();
+        console.log(this.lifeCount);
+        this.lifeCount += 1; 
+        if ( this.lifeCount === 3) {
+            this.cameras.main.shake(50);
+            this.life3.setVisible(true);
+        } else if ( this.lifeCount === 2) {
+            this.cameras.main.shake(50);
+            this.life2.setVisible(true);
+        } else if ( this.lifeCount === 1) {
+            this.cameras.main.shake(50);
+            this.life1.setVisible(true);
+        }
+        return false;
     }
 }//end level1 scene
