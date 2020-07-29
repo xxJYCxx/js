@@ -13,7 +13,7 @@ class Instruction2 extends Phaser.Scene {
 
         this.add.image(0, 0, 'gameinstruc2').setOrigin(0, 0).setScale(0.24);
 
-        this.add.text(0, 580, 'Press Spacebar to continue', { font: '24px Courier', fill: '#000000' });
+        this.add.text(530, 480, 'Press Spacebar to continue', { font: '15px Courier', fill: '#000000' });
 
         console.log("This is storyScene");
 
