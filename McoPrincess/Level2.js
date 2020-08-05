@@ -346,7 +346,8 @@ class Level2 extends Phaser.Scene {
             this.time.delayedCall(1000,function() {
                 this.lifeCount = 3;
                 this.bgmSnd.stop();
-                this.scene.restart();
+                // this.scene.restart();
+                this.scene.start("gameOver");
             },[], this);
         }
         this.cameras.main.shake(50);
@@ -375,7 +376,8 @@ class Level2 extends Phaser.Scene {
             this.time.delayedCall(1000,function() {
                 this.lifeCount = 3;
                 this.bgmSnd.stop();
-                this.scene.restart();
+                // this.scene.restart();
+                this.scene.start("gameOver");
             },[], this);
         }
         this.cameras.main.shake(50);
