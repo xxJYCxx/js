@@ -230,6 +230,9 @@ class Level1 extends Phaser.Scene {
             {
                 x: 600,
             },
+            {
+                x: 400,
+            },
         ]
         });
     }
@@ -246,6 +249,9 @@ class Level1 extends Phaser.Scene {
             },
             {
                 x: 500,
+            },
+            {
+                x: 650,
             },
         ]
         });

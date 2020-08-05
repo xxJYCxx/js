@@ -236,7 +236,7 @@ class Level2 extends Phaser.Scene {
         this.time.delayedCall(1000,function() {
             this.bgmSnd.loop = false;
             this.bgmSnd.stop()
-            this.scene.start("Level3");
+            this.scene.start("levelPass1");
         },[], this);
     }
         }
